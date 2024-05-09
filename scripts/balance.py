@@ -109,6 +109,7 @@ def main():
 def initialize_logger(console_level,sn,str_date):
     logger = logging.getLogger('bluefin')
     save_dir = os.path.join(os.path.expanduser('~'),'bluefin')
+    save_dir = os.path.join(save_dir, 'logs')
     os.makedirs(save_dir, exist_ok=True)
     save_filepath = os.path.join(save_dir, f'bluefin1.5kwh_{sn}_{str_date}.txt')
     logger.setLevel(logging.DEBUG)
