@@ -1,4 +1,4 @@
-import os.path
+import os
 from datetime import datetime, timezone
 import logging
 import sys
@@ -27,6 +27,8 @@ def get_port():
                 if not isinstance(versum.sn, int):
                     continue
                 else:
+                    if '/dev' not in port and os.name == 'posix':
+                        port = os.path.join('/dev',port)
                     break
     return port
 
